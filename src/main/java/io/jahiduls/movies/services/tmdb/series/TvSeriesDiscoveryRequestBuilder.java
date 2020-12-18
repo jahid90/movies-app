@@ -1,8 +1,8 @@
-package io.jahiduls.movies.services.tmdb;
+package io.jahiduls.movies.services.tmdb.series;
 
 import io.jahiduls.movies.client.HttpClientFactory;
 import io.jahiduls.movies.configuration.TmdbConfiguration;
-import io.jahiduls.movies.services.tmdb.MoviesDiscovery.Request;
+import io.jahiduls.movies.services.tmdb.series.TvSeriesDiscovery.Request;
 import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -14,11 +14,9 @@ import org.springframework.web.reactive.function.client.WebClient.RequestHeaders
 
 @Component
 @RequiredArgsConstructor
-public class MoviesDiscoveryRequestBuilder {
+public class TvSeriesDiscoveryRequestBuilder {
 
-    private static final String BASE_URL = "https://api.themoviedb.org/3";
-    private static final String DISCOVERY_PATH = "/discover/movie";
-
+    private static final String DISCOVERY_PATH = "/discover/tv";
     private static final String QUERY_API_KEY = "api_key";
     private static final String QUERY_PAGE = "page";
 
@@ -34,22 +32,21 @@ public class MoviesDiscoveryRequestBuilder {
         queryParams.add(QUERY_API_KEY, tmdbConfiguration.token());
     }
 
-    public MoviesDiscoveryRequestBuilder withPage(final int page) {
+    public TvSeriesDiscoveryRequestBuilder withPage(final int page) {
 
         queryParams.add(QUERY_PAGE, "" + page);
 
         return this;
     }
 
-    public MoviesDiscovery.Request build() {
+    public TvSeriesDiscovery.Request build() {
 
-        final WebClient client = clientFactory.webClientOf(BASE_URL + DISCOVERY_PATH);
+        final WebClient webClient = clientFactory.webClientOf(tmdbConfiguration.baseUrl() + DISCOVERY_PATH);
 
-        final RequestHeadersSpec<?> spec = client.get()
+        final RequestHeadersSpec<?> requestSpec = webClient.get()
                 .uri(uriBuilder -> uriBuilder.queryParams(queryParams).build())
                 .accept(MediaType.APPLICATION_JSON);
 
-        return new Request(spec);
+        return new Request(requestSpec);
     }
-
 }

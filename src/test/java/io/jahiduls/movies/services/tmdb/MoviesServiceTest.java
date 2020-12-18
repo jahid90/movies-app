@@ -2,6 +2,8 @@ package io.jahiduls.movies.services.tmdb;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import io.jahiduls.movies.services.tmdb.movies.MoviesDiscoveryRequestBuilder;
+import io.jahiduls.movies.services.tmdb.movies.MoviesService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

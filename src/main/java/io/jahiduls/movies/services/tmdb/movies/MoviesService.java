@@ -1,4 +1,4 @@
-package io.jahiduls.movies.services.tmdb;
+package io.jahiduls.movies.services.tmdb.movies;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

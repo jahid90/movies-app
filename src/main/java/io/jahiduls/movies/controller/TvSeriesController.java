@@ -1,7 +1,7 @@
 package io.jahiduls.movies.controller;
 
-import io.jahiduls.movies.services.tmdb.movies.MoviesDiscovery.Response;
-import io.jahiduls.movies.services.tmdb.movies.MoviesService;
+import io.jahiduls.movies.services.tmdb.series.TvSeriesDiscovery;
+import io.jahiduls.movies.services.tmdb.series.TvSeriesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,14 +12,14 @@ import reactor.core.publisher.Mono;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/v1/movies")
+@RequestMapping("/api/v1/series")
 @RequiredArgsConstructor
-public class MoviesController {
+public class TvSeriesController {
 
-    private final MoviesService service;
+    private final TvSeriesService service;
 
     @GetMapping(value = "/popular", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<Response> popular() {
+    public Mono<TvSeriesDiscovery.Response> discover() {
         return service.discoveryRequestBuilder().build().execute();
     }
 

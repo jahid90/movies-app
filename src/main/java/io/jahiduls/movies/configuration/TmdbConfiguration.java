@@ -6,11 +6,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class TmdbConfiguration {
 
-    @Value("${OMDB_API_KEY}")
-    private String token;
+    private static final String BASE_URL = "https://api.themoviedb.org/3";
+    @Value("${OMDB_API_KEY}") private String token;
 
     public String token() {
         return token;
+    }
+
+    public String baseUrl() {
+        return BASE_URL;
     }
 
 }
