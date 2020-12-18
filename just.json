@@ -3,7 +3,7 @@
     "commands": {
         "build": "./mvnw package",
         "docker:build": "docker build -t movies.service:local .",
-        "docker:run": "docker run -d -p 9000:8080 --name movies.service movies.service:local",
+        "docker:run": "docker run -d -p 9000:8080 --name movies.service --env-file /home/jahiduls/.env/.omdb movies.service:local",
         "docker:stop": "docker rm --force movies.service"
     }
 }
