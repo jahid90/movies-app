@@ -1,6 +1,7 @@
 package io.jahiduls.movies.services.tmdb.movies.discovery;
 
 import io.jahiduls.movies.client.HttpClientFactory;
+import io.jahiduls.movies.configuration.BeanName;
 import io.jahiduls.movies.configuration.TmdbConfiguration;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +12,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-@Component
+@Component(value = BeanName.MOVIES_DISCOVERY_REQUEST_BUILDER)
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @RequiredArgsConstructor
 public class RequestBuilder implements FirstStep, SortByStep, PageStep, BuilderStep {
