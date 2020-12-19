@@ -1,28 +1,28 @@
-package io.jahiduls.movies.services.model;
+package io.jahiduls.movies.services.tmdb.model;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import java.util.List;
 import lombok.Getter;
 import lombok.ToString;
 
 @Getter
 @ToString
 @JsonNaming(SnakeCaseStrategy.class)
-public class TvSeries {
+public final class Movie {
 
     private Integer id;
-    private String name;
-    private String originalName;
+    private String title;
     private String overview;
+    private String originalTitle;
     private Double popularity;
     private Integer voteCount;
     private Double voteAverage;
+    private Boolean adult;
+    private Boolean video;
     private String posterPath;
     private String backdropPath;
-    private String firstAirDate;
+    private String releaseDate;
     private String originalLanguage;
-    private List<String> originCountry;
-    private List<Integer> genreIds;
+    private Integer[] genreIds;
 
 }

@@ -1,6 +1,6 @@
 package io.jahiduls.movies.controller;
 
-import io.jahiduls.movies.services.tmdb.movies.MoviesDiscovery.Response;
+import io.jahiduls.movies.services.tmdb.movies.discovery.Response;
 import io.jahiduls.movies.services.tmdb.movies.MoviesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -20,7 +20,7 @@ public class MoviesController {
 
     @GetMapping(value = "/popular", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response> popular() {
-        return service.discoveryRequestBuilder().build().execute();
+        return service.getPopular();
     }
 
 }
