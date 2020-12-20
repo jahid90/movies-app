@@ -17,5 +17,6 @@ public interface SortByStep {
     PageStep sortByVoteAverageDesc();
     PageStep sortByVoteCountAsc();
     PageStep sortByVoteCountDesc();
+    Request build();
 
 }

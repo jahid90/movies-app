@@ -9,5 +9,6 @@ public interface SortByStep {
     PageStep sortByVoteAverageDesc();
     PageStep sortByFirstAirDateAsc();
     PageStep sortByFirstAirDateDesc();
+    Request build();
 
 }
