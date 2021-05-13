@@ -1,0 +1,23 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'io.jahiduls'
+version = '0.0.1'
+description = 'movies'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.4.1'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.4.1'
+    implementation 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
+    implementation 'org.projectlombok:lombok:1.18.16'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.1'
+}
