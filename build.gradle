@@ -18,7 +18,7 @@ dependencies {
 
     implementation 'org.projectlombok:lombok:1.18.22'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.6.0'
-    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.0'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.1'
     implementation 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.0'
