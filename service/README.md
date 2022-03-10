@@ -19,25 +19,25 @@ The service needs an api key to make calls to TMDb. The key is fetched from an e
 $ export OMDB_API_KEY=<api key>
 ```
 
-All the below commands expect the availabilty of the [just-cli](https://github.com/jahid90/just-cli) on PATH. Alternatively, look into the `just.json` file and run the equivalent command.
+All the below commands expect the availabilty of the [just](https://github.com/jahid90/just-cli) command line tool on PATH. Alternatively, look into the `just.yaml` file and run the equivalent command.
 
 ### Generating the jar
 ```sh
-$ just do build
+$ just build
 ```
 
 ### Running the service
 ```sh
-$ just do run
+$ just run
 ```
 
 ### Running the service as a docker containers
 ```sh
-$ just do docker:build
-$ just do docker:run
+$ just docker:build
+$ just docker:run
 ```
 
 To stop the container
 ```sh
-$ just do docker:stop
+$ just docker:stop
 ```

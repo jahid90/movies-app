@@ -1,0 +1,7 @@
+version": 1
+commands:
+  - build: ./gradlew package
+  - run: ./gradlew spring-boot:run
+  - container:build: ./gradlew jibBuild
+  - container:run: docker run -d -p 9000:8080 --name movies-service --env-file /home/jahiduls/.env/.omdb movies-service:local
+  - container:stop: docker rm --force movies-service
