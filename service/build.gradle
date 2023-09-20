@@ -18,9 +18,9 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-    implementation 'org.projectlombok:lombok:1.18.28'
+    implementation 'org.projectlombok:lombok:1.18.30'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.7.15'
     implementation 'org.springframework.boot:spring-boot-starter-webflux:2.7.15'
     implementation 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
